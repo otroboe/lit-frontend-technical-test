@@ -1,3 +1,1 @@
-// TODO, define Fragments for data
-
-export const empty = () => {};
+export * from './post'

@@ -1,3 +1,1 @@
-// TODO, define Queries for data
-
-export const empty = () => {};
+export * from './post'

@@ -9,7 +9,7 @@ import Home from './pages/Home';
 import Category from './pages/Category';
 import Post from './pages/Post';
 import NotFound from './pages/NotFound';
-import Header from './components/Header';
+import { Header } from './components/layout';
 
 function App() {
   return (
