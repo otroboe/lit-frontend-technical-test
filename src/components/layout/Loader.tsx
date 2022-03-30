@@ -14,7 +14,9 @@ const LoaderWrapper = styled(Box)`
 const Loader = () => (
   <LoaderWrapper>
     <CircularProgress />
-    <Typography variant="subtitle2" sx={{ marginTop: 1 }}>Loading</Typography>
+    <Typography variant="subtitle2" sx={{ marginTop: 1 }}>
+      Loading
+    </Typography>
   </LoaderWrapper>
 );
 

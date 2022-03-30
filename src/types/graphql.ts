@@ -1,7 +1,13 @@
 export type Maybe<T> = T | null;
-export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
-export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
-export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
+export type Exact<T extends { [key: string]: unknown }> = {
+  [K in keyof T]: T[K];
+};
+export type MakeOptional<T, K extends keyof T> = Omit<T, K> & {
+  [SubKey in K]?: Maybe<T[SubKey]>;
+};
+export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & {
+  [SubKey in K]: Maybe<T[SubKey]>;
+};
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
   ID: string;
@@ -53,7 +59,6 @@ export type Mutation = {
   removeCategory?: Maybe<Category>;
 };
 
-
 export type MutationCreatePostArgs = {
   title: Scalars['String'];
   category_id: Scalars['ID'];
@@ -61,11 +66,9 @@ export type MutationCreatePostArgs = {
   cover: Scalars['String'];
 };
 
-
 export type MutationCreateManyPostArgs = {
   data?: Maybe<Array<Maybe<PostInput>>>;
 };
-
 
 export type MutationUpdatePostArgs = {
   id: Scalars['ID'];
@@ -75,29 +78,24 @@ export type MutationUpdatePostArgs = {
   cover?: Maybe<Scalars['String']>;
 };
 
-
 export type MutationRemovePostArgs = {
   id: Scalars['ID'];
 };
-
 
 export type MutationCreateCategoryArgs = {
   title: Scalars['String'];
   description: Scalars['String'];
 };
 
-
 export type MutationCreateManyCategoryArgs = {
   data?: Maybe<Array<Maybe<CategoryInput>>>;
 };
-
 
 export type MutationUpdateCategoryArgs = {
   id: Scalars['ID'];
   title?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
 };
-
 
 export type MutationRemoveCategoryArgs = {
   id: Scalars['ID'];
@@ -146,11 +144,9 @@ export type Query = {
   _allCategoriesMeta?: Maybe<ListMetadata>;
 };
 
-
 export type QueryPostArgs = {
   id: Scalars['ID'];
 };
-
 
 export type QueryAllPostsArgs = {
   page?: Maybe<Scalars['Int']>;
@@ -160,18 +156,15 @@ export type QueryAllPostsArgs = {
   filter?: Maybe<PostFilter>;
 };
 
-
 export type Query_AllPostsMetaArgs = {
   page?: Maybe<Scalars['Int']>;
   perPage?: Maybe<Scalars['Int']>;
   filter?: Maybe<PostFilter>;
 };
 
-
 export type QueryCategoryArgs = {
   id: Scalars['ID'];
 };
-
 
 export type QueryAllCategoriesArgs = {
   page?: Maybe<Scalars['Int']>;
@@ -180,7 +173,6 @@ export type QueryAllCategoriesArgs = {
   sortOrder?: Maybe<Scalars['String']>;
   filter?: Maybe<CategoryFilter>;
 };
-
 
 export type Query_AllCategoriesMetaArgs = {
   page?: Maybe<Scalars['Int']>;

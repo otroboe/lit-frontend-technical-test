@@ -1,4 +1,4 @@
-import PostList from "./PostList";
-import PostListItem from "./PostListItem";
+import PostList from './PostList';
+import PostListItem from './PostListItem';
 
-export { PostList, PostListItem }
+export { PostList, PostListItem };

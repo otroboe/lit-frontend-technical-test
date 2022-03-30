@@ -36,7 +36,6 @@ const Header = ({ navigation }: Props) => {
                 {item.label}
               </Button>
             ))}
-
         </Toolbar>
       </AppBar>
     </Box>

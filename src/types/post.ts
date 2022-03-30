@@ -1,4 +1,4 @@
-import { ListMetadata, Post } from "./graphql"
+import { ListMetadata, Post } from './graphql';
 
 export interface GetPostListResult {
   allPosts: Post[];

@@ -18,9 +18,9 @@ interface PostListItemProps {
 }
 
 const PostListItem: FC<PostListItemProps> = ({
-  cardElevation = 4,
+  cardElevation = 2,
   cardMaxWidth = 400,
-  imageHeight = 200,
+  imageHeight = 150,
   post,
 }: PostListItemProps): JSX.Element => {
   const { content, cover, id, title } = post;
@@ -34,20 +34,15 @@ const PostListItem: FC<PostListItemProps> = ({
         image={cover}
       />
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {title}
+        <Typography gutterBottom variant="subtitle1" component="div">
+          {id} - {title}
         </Typography>
         <Typography variant="body2" color="text.secondary">
           {truncate(content)}
         </Typography>
       </CardContent>
-      <CardActions>
-        <Button
-          color="primary"
-          component={Link}
-          size="small"
-          to={`/post/${id}`}
-        >
+      <CardActions sx={{ justifyContent: 'flex-end' }}>
+        <Button color="primary" component={Link} to={`/post/${id}`}>
           Read more
         </Button>
       </CardActions>

@@ -1,6 +1,6 @@
-import { gql } from "@apollo/client";
+import { gql } from '@apollo/client';
 
-import { postBaseFields } from "../fragments";
+import { postBaseFields } from '../fragments';
 
 export const GET_POST_LIST = gql`
   ${postBaseFields}
