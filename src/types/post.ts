@@ -9,3 +9,11 @@ export interface GetPostListVariables {
   page: number;
   perPage: number;
 }
+
+export interface GetPostResult {
+  Post: Post;
+}
+
+export interface GetPostVariables {
+  id: string;
+}
