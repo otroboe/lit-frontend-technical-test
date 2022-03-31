@@ -2,10 +2,10 @@ import { gql } from '@apollo/client';
 
 import { postBaseFields } from '../fragments';
 
-export const GET_POST_LIST = gql`
+export const GET_ALL_POSTS = gql`
   ${postBaseFields}
 
-  query GetPostList($page: Int, $perPage: Int) {
+  query GetAllPosts($page: Int, $perPage: Int) {
     allPosts(page: $page, perPage: $perPage) {
       ...PostBaseFields
     }

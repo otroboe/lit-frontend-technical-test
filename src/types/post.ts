@@ -1,19 +1,10 @@
 import { ListMetadata, Post } from './graphql';
 
-export interface GetPostListResult {
+export interface QueryAllPostsResult {
   allPosts: Post[];
   _allPostsMeta: ListMetadata;
 }
 
-export interface GetPostListVariables {
-  page: number;
-  perPage: number;
-}
-
-export interface GetPostResult {
+export interface QueryPostResult {
   Post: Post;
-}
-
-export interface GetPostVariables {
-  id: string;
 }

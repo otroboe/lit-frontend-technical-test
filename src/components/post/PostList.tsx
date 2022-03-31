@@ -5,23 +5,27 @@ import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import React, { FC, useState } from 'react';
 
-import { GET_POST_LIST } from '../../apollo/queries';
-import { GetPostListResult, GetPostListVariables } from '../../types';
+import { GET_ALL_POSTS } from '../../apollo/queries';
+import { QueryAllPostsResult, QueryAllPostsArgs } from '../../types';
 import { POSTS_PER_PAGE_LIMIT } from '../../utils';
 import { Loader } from '../layout';
 import PostListItem from './PostListItem';
 
-interface PostListProps {}
+interface PostListProps {
+  perPage?: number;
+}
 
-const PostList: FC<PostListProps> = (): JSX.Element => {
+const PostList: FC<PostListProps> = ({
+  perPage = POSTS_PER_PAGE_LIMIT,
+}): JSX.Element => {
   const [page, setPage] = useState(0);
   const { fetchMore, data, loading } = useQuery<
-    GetPostListResult,
-    GetPostListVariables
-  >(GET_POST_LIST, {
+    QueryAllPostsResult,
+    QueryAllPostsArgs
+  >(GET_ALL_POSTS, {
     variables: {
       page,
-      perPage: POSTS_PER_PAGE_LIMIT,
+      perPage,
     },
   });
 

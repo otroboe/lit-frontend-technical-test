@@ -8,7 +8,7 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import TurnedInNotIcon from '@mui/icons-material/TurnedInNot';
 
-import { GetPostResult, GetPostVariables } from '../types';
+import { QueryPostResult, QueryPostArgs } from '../types';
 import { GET_POST } from '../apollo/queries';
 import { Loader } from '../components/layout';
 
@@ -18,12 +18,9 @@ interface PostParams {
 
 const PostComponent = () => {
   const { id } = useParams<PostParams>();
-  const { data, loading } = useQuery<GetPostResult, GetPostVariables>(
-    GET_POST,
-    {
-      variables: { id },
-    },
-  );
+  const { data, loading } = useQuery<QueryPostResult, QueryPostArgs>(GET_POST, {
+    variables: { id },
+  });
 
   if (loading || !data) {
     return (
