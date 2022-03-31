@@ -1,9 +1,8 @@
+import React, { FC, useState } from 'react';
 import { useQuery } from '@apollo/client';
 import LoadingButton from '@mui/lab/LoadingButton';
-import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
-import React, { FC, useState } from 'react';
 
 import { GET_ALL_POSTS } from '../../apollo/queries';
 import { QueryAllPostsResult, QueryAllPostsArgs } from '../../types';
@@ -54,11 +53,7 @@ const PostList: FC<PostListProps> = ({
         ))}
       </Grid>
 
-      {loading && (
-        <Box p={3}>
-          <Loader />
-        </Box>
-      )}
+      {loading && <Loader />}
 
       {showReadMoreBtn && (
         <Stack direction="row" justifyContent="center" mt={3}>

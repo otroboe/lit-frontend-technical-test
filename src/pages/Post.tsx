@@ -1,7 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
-import Box from '@mui/material/Box';
 import Chip from '@mui/material/Chip';
 import Container from '@mui/material/Container';
 import Stack from '@mui/material/Stack';
@@ -23,11 +22,7 @@ const PostComponent = () => {
   });
 
   if (loading || !data) {
-    return (
-      <Box p={5}>
-        <Loader />
-      </Box>
-    );
+    return <Loader />;
   }
 
   const { Category, content, cover, title } = data.Post;

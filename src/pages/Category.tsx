@@ -7,7 +7,7 @@ import { useQuery } from '@apollo/client';
 
 import { GET_ALL_CATEGORIES_META } from '../apollo/queries';
 import CategoryList from '../components/category/CategoryList';
-import { Loader, InfoTooltip } from '../components/layout';
+import { Loader, InfoTooltip, Dropzone } from '../components/layout';
 import {
   Query_AllCategoriesMetaResult,
   Query_AllCategoriesMetaArgs,
@@ -29,7 +29,7 @@ const Category = () => {
     <Container maxWidth="lg" sx={{ paddingTop: 3, paddingBottom: 3 }}>
       <Grid container spacing={2}>
         <Grid item xs={8} sx={{ paddingTop: 3, paddingBottom: 3 }}>
-          <p>Dropzone area</p>
+          <Dropzone />
         </Grid>
 
         <Grid item xs={4}>

@@ -1,16 +1,11 @@
-import { useQuery } from '@apollo/client';
-import Avatar from '@mui/material/Avatar';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemAvatar from '@mui/material/ListItemAvatar';
-import ListItemText from '@mui/material/ListItemText';
-import TurnedInNotIcon from '@mui/icons-material/TurnedInNot';
 import React, { FC } from 'react';
+import { useQuery } from '@apollo/client';
+import List from '@mui/material/List';
 
 import { GET_ALL_CATEGORIES } from '../../apollo/queries';
 import { QueryAllCategoriesArgs, QueryAllCategoriesResult } from '../../types';
-import { truncate } from '../../utils';
 import { Loader } from '../layout';
+import CategoryListItem from './CategoryListItem';
 
 interface CategoryListProps {
   limit?: number;
@@ -35,17 +30,7 @@ const CategoryList: FC<CategoryListProps> = ({
   return (
     <List>
       {(data?.allCategories || []).map((category) => (
-        <ListItem key={category.id}>
-          <ListItemAvatar>
-            <Avatar>
-              <TurnedInNotIcon />
-            </Avatar>
-          </ListItemAvatar>
-          <ListItemText
-            primary={category.title}
-            secondary={truncate(category.description, 30)}
-          />
-        </ListItem>
+        <CategoryListItem category={category} key={category.id} />
       ))}
     </List>
   );

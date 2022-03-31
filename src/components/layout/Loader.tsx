@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { styled } from '@mui/material/styles';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
@@ -11,8 +11,12 @@ const LoaderWrapper = styled(Box)`
   flex-direction: column;
 `;
 
-const Loader = () => (
-  <LoaderWrapper>
+interface LoaderProps {
+  p?: number;
+}
+
+const Loader: FC<LoaderProps> = ({ p = 3 }: LoaderProps) => (
+  <LoaderWrapper p={p}>
     <CircularProgress />
     <Typography variant="subtitle2" sx={{ marginTop: 1 }}>
       Loading
