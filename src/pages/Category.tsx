@@ -5,7 +5,7 @@ import Grid from '@mui/material/Grid';
 import CategoryProvider from '../providers/CategoryProvider';
 import { CategoryContent, CategorySidebar } from '../components/category';
 
-const Category = () => (
+const CategoryPage = () => (
   <CategoryProvider>
     <Container maxWidth="lg" sx={{ paddingTop: 3, paddingBottom: 3 }}>
       <Grid container spacing={2}>
@@ -21,4 +21,4 @@ const Category = () => (
   </CategoryProvider>
 );
 
-export default Category;
+export default CategoryPage;

@@ -15,7 +15,7 @@ interface PostParams {
   id: string;
 }
 
-const PostComponent = () => {
+const PostPage = () => {
   const { id } = useParams<PostParams>();
   const { data, loading } = useQuery<QueryPostResult, QueryPostArgs>(GET_POST, {
     variables: { id },
@@ -50,4 +50,4 @@ const PostComponent = () => {
   );
 };
 
-export default PostComponent;
+export default PostPage;

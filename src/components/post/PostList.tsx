@@ -4,6 +4,7 @@ import LoadingButton from '@mui/lab/LoadingButton';
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 
+import client from '../../apollo';
 import { GET_ALL_POSTS } from '../../apollo/queries';
 import { QueryAllPostsResult, QueryAllPostsArgs } from '../../types';
 import { POSTS_PER_PAGE_LIMIT } from '../../utils';
@@ -17,7 +18,15 @@ interface PostListProps {
 const PostList: FC<PostListProps> = ({
   perPage = POSTS_PER_PAGE_LIMIT,
 }): JSX.Element => {
-  const [page, setPage] = useState(0);
+  // Detect the result in cache to re-adjust the page number when coming back with back navigation
+  const cachedResult = client.readQuery<QueryAllPostsResult>({
+    query: GET_ALL_POSTS,
+  });
+  const initialPage = cachedResult
+    ? cachedResult.allPosts.length / perPage - 1
+    : 0;
+
+  const [page, setPage] = useState(initialPage);
   const { fetchMore, data, loading } = useQuery<
     QueryAllPostsResult,
     QueryAllPostsArgs

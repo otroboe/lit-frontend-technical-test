@@ -35,7 +35,7 @@ const PostListItem: FC<PostListItemProps> = ({
       />
       <CardContent>
         <Typography gutterBottom variant="subtitle1" component="div">
-          {title}
+          {id} - {title}
         </Typography>
         <Typography variant="body2" color="text.secondary">
           {truncate(content)}
