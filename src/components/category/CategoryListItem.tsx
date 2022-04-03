@@ -1,14 +1,14 @@
-import React, { FC, useContext, useEffect } from 'react';
-import { useDrag } from 'react-dnd';
+import TurnedInNotIcon from '@mui/icons-material/TurnedInNot';
 import Avatar from '@mui/material/Avatar';
 import ListItem from '@mui/material/ListItem';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import ListItemText from '@mui/material/ListItemText';
-import TurnedInNotIcon from '@mui/icons-material/TurnedInNot';
+import React, { FC, useContext, useEffect } from 'react';
+import { useDrag } from 'react-dnd';
 
+import { CategoryContext } from '../../providers/CategoryProvider';
 import { Category, DND_TYPES } from '../../types';
 import { truncate } from '../../utils';
-import { CategoryContext } from '../../providers/CategoryProvider';
 
 interface CategoryListItemProps {
   category: Category;

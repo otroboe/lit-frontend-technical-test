@@ -1,6 +1,6 @@
-import React, { FC, useState } from 'react';
 import InfoIcon from '@mui/icons-material/Info';
 import { ClickAwayListener, IconButton, Tooltip } from '@mui/material';
+import React, { FC, useState } from 'react';
 
 interface InfoIconProps {
   message: string;

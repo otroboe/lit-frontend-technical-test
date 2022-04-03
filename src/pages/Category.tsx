@@ -1,9 +1,9 @@
-import React from 'react';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
+import React from 'react';
 
-import CategoryProvider from '../providers/CategoryProvider';
 import { CategoryContent, CategorySidebar } from '../components/category';
+import CategoryProvider from '../providers/CategoryProvider';
 
 const CategoryPage = () => (
   <CategoryProvider>

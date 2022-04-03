@@ -1,8 +1,8 @@
-import React, { FC } from 'react';
-import { ConnectDropTarget } from 'react-dnd';
 import { useTheme } from '@mui/material';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
+import React, { FC } from 'react';
+import { ConnectDropTarget } from 'react-dnd';
 
 interface DropzoneProps {
   dropRef: ConnectDropTarget;

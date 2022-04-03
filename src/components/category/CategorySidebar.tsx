@@ -1,12 +1,12 @@
-import React from 'react';
 import { useQuery } from '@apollo/client';
+import React from 'react';
 
 import { GET_ALL_CATEGORIES_META } from '../../apollo/queries';
 import CategoryList from '../../components/category/CategoryList';
 import { ContainerTitle, Loader } from '../../components/layout';
 import {
-  Query_AllCategoriesMetaResult,
   Query_AllCategoriesMetaArgs,
+  Query_AllCategoriesMetaResult,
 } from '../../types';
 
 const CategorySidebar = () => {

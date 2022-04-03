@@ -1,15 +1,15 @@
-import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { ApolloProvider } from '@apollo/client';
-import client from './apollo';
+import React from 'react';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 
-import Home from './pages/Home';
-import Category from './pages/Category';
-import Post from './pages/Post';
-import NotFound from './pages/NotFound';
+import client from './apollo';
 import { Header } from './components/layout';
+import Category from './pages/Category';
+import Home from './pages/Home';
+import NotFound from './pages/NotFound';
+import Post from './pages/Post';
 
 function App() {
   return (

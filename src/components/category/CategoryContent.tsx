@@ -1,9 +1,9 @@
-import React, { FC, useContext } from 'react';
 import Grid from '@mui/material/Grid';
+import React, { FC, useContext } from 'react';
 import { useDrop } from 'react-dnd';
 
 import { CategoryContext } from '../../providers/CategoryProvider';
-import { DndItemCategory, DND_TYPES, Post } from '../../types';
+import { DND_TYPES, DndItemCategory, Post } from '../../types';
 import { ContainerTitle, Dropzone, Loader } from '../layout';
 import { PostListItem } from '../post';
 

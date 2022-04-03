@@ -1,12 +1,12 @@
-import React, { FC, useState } from 'react';
 import { useQuery } from '@apollo/client';
 import LoadingButton from '@mui/lab/LoadingButton';
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
+import React, { FC, useState } from 'react';
 
 import client from '../../apollo';
 import { GET_ALL_POSTS } from '../../apollo/queries';
-import { QueryAllPostsResult, QueryAllPostsArgs } from '../../types';
+import { QueryAllPostsArgs, QueryAllPostsResult } from '../../types';
 import { POSTS_PER_PAGE_LIMIT } from '../../utils';
 import { Loader } from '../layout';
 import PostListItem from './PostListItem';

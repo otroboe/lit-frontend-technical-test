@@ -1,5 +1,6 @@
 import { useLazyQuery } from '@apollo/client';
-import { createContext, FC, useState } from 'react';
+import { FC, createContext, useState } from 'react';
+
 import { GET_CATEGORY } from '../apollo/queries';
 import { Category, QueryCategoryArgs, QueryCategoryResult } from '../types';
 

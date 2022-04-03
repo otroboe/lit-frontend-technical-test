@@ -1,6 +1,6 @@
-import React, { FC } from 'react';
 import { useQuery } from '@apollo/client';
 import List from '@mui/material/List';
+import React, { FC } from 'react';
 
 import { GET_ALL_CATEGORIES } from '../../apollo/queries';
 import { QueryAllCategoriesArgs, QueryAllCategoriesResult } from '../../types';

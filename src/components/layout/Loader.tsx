@@ -1,8 +1,8 @@
-import React, { FC } from 'react';
-import { styled } from '@mui/material/styles';
-import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
+import CircularProgress from '@mui/material/CircularProgress';
 import Typography from '@mui/material/Typography';
+import { styled } from '@mui/material/styles';
+import React, { FC } from 'react';
 
 const LoaderWrapper = styled(Box)`
   display: flex;

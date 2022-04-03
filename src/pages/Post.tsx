@@ -1,15 +1,15 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
+import TurnedInNotIcon from '@mui/icons-material/TurnedInNot';
 import Chip from '@mui/material/Chip';
 import Container from '@mui/material/Container';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import TurnedInNotIcon from '@mui/icons-material/TurnedInNot';
+import React from 'react';
+import { useParams } from 'react-router-dom';
 
-import { QueryPostResult, QueryPostArgs } from '../types';
 import { GET_POST } from '../apollo/queries';
 import { Loader } from '../components/layout';
+import { QueryPostArgs, QueryPostResult } from '../types';
 
 interface PostParams {
   id: string;
