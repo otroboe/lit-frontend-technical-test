@@ -7,3 +7,7 @@ export interface QueryAllCategoriesResult {
 export interface Query_AllCategoriesMetaResult {
   _allCategoriesMeta: ListMetadata;
 }
+
+export interface QueryCategoryResult {
+  Category: Category;
+}

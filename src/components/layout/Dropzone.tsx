@@ -1,29 +1,23 @@
 import React, { FC } from 'react';
+import { ConnectDropTarget } from 'react-dnd';
 import { useTheme } from '@mui/material';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import { useDrop } from 'react-dnd';
-
-import { DndItemCategory, DND_TYPES } from '../../types';
 
 interface DropzoneProps {
+  dropRef: ConnectDropTarget;
   height?: number;
+  isOver: boolean;
+  message?: string;
 }
 
 const Dropzone: FC<DropzoneProps> = ({
+  dropRef,
   height = 300,
+  isOver,
+  message = 'Drop here',
 }: DropzoneProps): JSX.Element => {
   const theme = useTheme();
-  const [{ isOver }, dropRef] = useDrop(() => ({
-    accept: DND_TYPES.CATEGORY,
-    drop: (item: DndItemCategory) => {
-      console.log({ item });
-    },
-    collect: (monitor) => ({
-      isOver: !!monitor.isOver(),
-    }),
-  }));
-
   const backgroundColor = isOver
     ? theme.palette.grey[400]
     : theme.palette.grey[200];
@@ -32,7 +26,7 @@ const Dropzone: FC<DropzoneProps> = ({
     <Stack
       alignItems="center"
       justifyContent="center"
-      mt={2}
+      m={2}
       ref={dropRef}
       sx={{
         backgroundColor,
@@ -40,7 +34,7 @@ const Dropzone: FC<DropzoneProps> = ({
         height,
       }}
     >
-      <Typography variant="subtitle1">Drop category here</Typography>
+      <Typography variant="subtitle1">{message}</Typography>
     </Stack>
   );
 };
